@@ -15,9 +15,9 @@ class Area extends Measurement
      *
      * @param float $input
      * @param string $unit
-     * @param int $precision
+     * @param float $precision
      */
-    public function __construct(float $input, string $unit, int $precision = 2)
+    public function __construct(float $input, string $unit, float $precision = 2)
     {
         $this->validateUnit(AreaUnit::class, $unit);
         parent::__construct($input, $unit, $precision);

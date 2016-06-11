@@ -21,7 +21,7 @@ abstract class Measurement
     protected $unit;
 
     /**
-     * @var int
+     * @var float
      */
     protected $precision;
 
@@ -30,9 +30,9 @@ abstract class Measurement
      *
      * @param float $input
      * @param string $unit
-     * @param int $precision
+     * @param float $precision
      */
-    public function __construct(float $input, string $unit, int $precision = 2)
+    public function __construct(float $input, string $unit, float $precision)
     {
         $this->input = $input;
         $this->unit = $unit;
