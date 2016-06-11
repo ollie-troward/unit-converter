@@ -21,15 +21,22 @@ class Measurement
     protected $unit;
 
     /**
+     * @var int
+     */
+    protected $precision;
+
+    /**
      * Temperature constructor.
      *
      * @param float $input
      * @param string $unit
+     * @param int $precision
      */
-    public function __construct(float $input, string $unit)
+    public function __construct(float $input, string $unit, int $precision = 2)
     {
         $this->input = $input;
         $this->unit = $unit;
+        $this->precision = $precision;
     }
 
     /**
@@ -47,7 +54,7 @@ class Measurement
 
         $convert = 'convert' . $this->unit . 'To' . $unit;
 
-        return $this->$convert();
+        return round($this->$convert(), $this->precision);
     }
 
     /**

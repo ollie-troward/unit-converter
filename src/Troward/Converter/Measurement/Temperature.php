@@ -15,11 +15,12 @@ class Temperature extends Measurement
      *
      * @param float $input
      * @param string $unit
+     * @param int $precision
      */
-    public function __construct(float $input, string $unit)
+    public function __construct(float $input, string $unit, int $precision = 2)
     {
         $this->validateUnit(TemperatureUnit::class, $unit);
-        parent::__construct($input, $unit);
+        parent::__construct($input, $unit, $precision);
     }
 
     /**
@@ -39,7 +40,7 @@ class Temperature extends Measurement
      */
     protected function convert°CTo°K() : float
     {
-        //
+        return $this->input + 273.15;
     }
 
     /**
