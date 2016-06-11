@@ -28,7 +28,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Tom²()
+    protected function convertkm²Tom²() : float
     {
         return $this->input * 1000000;
     }
@@ -38,7 +38,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Tomile²()
+    protected function convertkm²Tomile²() : float
     {
         return $this->input * 0.38610;
     }
@@ -48,7 +48,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Toyd²()
+    protected function convertkm²Toyd²() : float
     {
         return $this->input / 0.00000083612736;
     }
@@ -58,7 +58,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Toft²()
+    protected function convertkm²Toft²() : float
     {
         return $this->input / 0.00000009290304;
     }
@@ -68,7 +68,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Toin²()
+    protected function convertkm²Toin²() : float
     {
         return $this->input / 0.00000000064516;
     }
@@ -78,7 +78,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Toha()
+    protected function convertkm²Toha() : float
     {
         return $this->input * 100;
     }
@@ -88,7 +88,7 @@ class Area extends Measurement
      *
      * @return float
      */
-    protected function convertkm²Toacre()
+    protected function convertkm²Toacre() : float
     {
         return $this->input / 0.00404685642;
     }

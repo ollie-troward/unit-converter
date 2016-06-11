@@ -63,6 +63,8 @@ abstract class Measurement
      * @param string $unitClass
      * @param string $unit
      *
+     * @throws \InvalidArgumentException
+     *
      * @return void
      */
     protected function validateUnit(string $unitClass, string $unit)
