@@ -39,4 +39,21 @@ class TemperatureSpec extends ObjectBehavior
         $this->get(TemperatureUnit::CELSIUS)
             ->shouldReturn($celsiusDegrees);
     }
+
+    /**
+     * Converts from Fahrenheit to Celsius and then returns original Fahrenheit.
+     */
+    function it_should_convert_fahrenheit_into_celsius_then_get_original_fahrenheit_after()
+    {
+        $fahrenheitDegrees = 53.6;
+        $celsiusDegrees = (float)12;
+
+        $this->beConstructedWith($fahrenheitDegrees, TemperatureUnit::FAHRENHEIT);
+
+        $this->get(TemperatureUnit::CELSIUS)
+            ->shouldReturn($celsiusDegrees);
+
+        $this->get(TemperatureUnit::FAHRENHEIT)
+            ->shouldReturn($fahrenheitDegrees);
+    }
 }
