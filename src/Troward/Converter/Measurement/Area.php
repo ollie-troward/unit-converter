@@ -42,4 +42,54 @@ class Area extends Measurement
     {
         return $this->input * 0.38610;
     }
+
+    /**
+     * Convert Square Kilometers to Square Yards.
+     *
+     * @return float
+     */
+    protected function convertkm²Toyd²()
+    {
+        return $this->input / 0.00000083612736;
+    }
+
+    /**
+     * Convert Square Kilometers to Square Feet.
+     *
+     * @return float
+     */
+    protected function convertkm²Toft²()
+    {
+        return $this->input / 0.00000009290304;
+    }
+
+    /**
+     * Convert Square Kilometers to Square Inches.
+     *
+     * @return float
+     */
+    protected function convertkm²Toin²()
+    {
+        return $this->input / 0.00000000064516;
+    }
+
+    /**
+     * Convert Square Kilometers to Hectares.
+     *
+     * @return float
+     */
+    protected function convertkm²Toha()
+    {
+        return $this->input * 100;
+    }
+
+    /**
+     * Convert Square Kilometers to Acres.
+     *
+     * @return float
+     */
+    protected function convertkm²Toacre()
+    {
+        return $this->input / 0.00404685642;
+    }
 }
