@@ -1,0 +1,26 @@
+{
+  "name": "ollietroward/unit-converter",
+  "description": "Unit Converter library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ollie Troward",
+      "email": "ollie@ollietroward.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpspec/phpspec": "^2.5",
+    "phpspec/nyan-formatters": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Troward\\Converter\\": "src/Troward/Converter"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\Troward\\Converter\\": "spec/Troward/Converter"
+    }
+  }
+}
