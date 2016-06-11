@@ -44,9 +44,9 @@ abstract class Measurement
      *
      * @param string $unit
      *
-     * @return mixed
+     * @return float
      */
-    public function get(string $unit)
+    public function get(string $unit) : float
     {
         if ($unit == $this->unit) {
             return $this->input;
