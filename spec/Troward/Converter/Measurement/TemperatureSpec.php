@@ -13,7 +13,7 @@ use Troward\Converter\Unit\TemperatureUnit;
 class TemperatureSpec extends ObjectBehavior
 {
     /**
-     * Converts from Celsius to Fahrenheit.
+     * Converts from Celsius into Fahrenheit.
      */
     function it_should_convert_celsius_into_fahrenheit()
     {
@@ -27,7 +27,21 @@ class TemperatureSpec extends ObjectBehavior
     }
 
     /**
-     * Converts from Fahrenheit to Celsius.
+     * Converts from Celsius into Kelvin.
+     */
+    function it_should_convert_celsius_into_kelvin()
+    {
+        $celsiusDegrees = 12.0068;
+        $kelvinDegrees = 285.16;
+
+        $this->beConstructedWith($celsiusDegrees, TemperatureUnit::CELSIUS);
+
+        $this->get(TemperatureUnit::KELVIN)
+            ->shouldReturn($kelvinDegrees);
+    }
+
+    /**
+     * Converts from Fahrenheit into Celsius.
      */
     function it_should_convert_fahrenheit_into_celsius()
     {
@@ -41,17 +55,45 @@ class TemperatureSpec extends ObjectBehavior
     }
 
     /**
-     * Give correct values with negative values.
+     * Converts from Fahrenheit into Kelvin.
      */
-    function it_should_give_correct_negative_conversion()
+    function it_should_convert_fahrenheit_into_kelvin()
     {
-        $fahrenheitDegrees = -53.6;
-        $celsiusDegrees = -47.56;
+        $fahrenheitDegrees = 53.34;
+        $kelvinDegrees = 285.01;
 
         $this->beConstructedWith($fahrenheitDegrees, TemperatureUnit::FAHRENHEIT);
 
+        $this->get(TemperatureUnit::KELVIN)
+            ->shouldReturn($kelvinDegrees);
+    }
+
+    /**
+     * Converts from Kelvin into Celsius.
+     */
+    function it_should_convert_kelvin_into_celsius()
+    {
+        $kelvinDegrees = 285.01;
+        $celsiusDegrees = 11.86;
+
+        $this->beConstructedWith($kelvinDegrees, TemperatureUnit::KELVIN);
+
         $this->get(TemperatureUnit::CELSIUS)
             ->shouldReturn($celsiusDegrees);
+    }
+
+    /**
+     * Converts from Kelvin into Fahrenheit.
+     */
+    function it_should_convert_kelvin_into_fahrenheit()
+    {
+        $kelvinDegrees = 285.01;
+        $fahrenheitDegrees = 53.35;
+
+        $this->beConstructedWith($kelvinDegrees, TemperatureUnit::KELVIN);
+
+        $this->get(TemperatureUnit::FAHRENHEIT)
+            ->shouldReturn($fahrenheitDegrees);
     }
 
     /**
@@ -69,6 +111,20 @@ class TemperatureSpec extends ObjectBehavior
 
         $this->get(TemperatureUnit::FAHRENHEIT)
             ->shouldReturn($fahrenheitDegrees);
+    }
+
+    /**
+     * Give correct values with negative values.
+     */
+    function it_should_give_correct_negative_conversion()
+    {
+        $fahrenheitDegrees = -53.6;
+        $celsiusDegrees = -47.56;
+
+        $this->beConstructedWith($fahrenheitDegrees, TemperatureUnit::FAHRENHEIT);
+
+        $this->get(TemperatureUnit::CELSIUS)
+            ->shouldReturn($celsiusDegrees);
     }
 
     /**

@@ -60,7 +60,7 @@ class Temperature extends Measurement
      */
     protected function convert°FTo°K() : float
     {
-        //
+        return ((($this->input - 32) * 5) / 9) + 273.15;
     }
 
     /**
@@ -70,7 +70,7 @@ class Temperature extends Measurement
      */
     protected function convert°KTo°C() : float
     {
-        //
+        return $this->input - 273.15;
     }
 
     /**
@@ -80,6 +80,6 @@ class Temperature extends Measurement
      */
     protected function convert°KTo°F() : float
     {
-        //
+        return (($this->input - 273.15) * 1.8) + 32;
     }
 }
