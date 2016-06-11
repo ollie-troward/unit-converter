@@ -8,7 +8,7 @@ use Troward\Converter\Unit\Unit;
  * Class Measurement
  * @package Troward\Converter\Measurement
  */
-class Measurement
+abstract class Measurement
 {
     /**
      * @var float
